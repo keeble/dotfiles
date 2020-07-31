@@ -37,7 +37,6 @@ Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'lyuts/vim-rtags'
 if filereadable(expand('node'))
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
