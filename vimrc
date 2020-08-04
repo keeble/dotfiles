@@ -35,8 +35,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+if v:version > 709
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+endif
 if filereadable(expand('node'))
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
