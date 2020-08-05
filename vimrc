@@ -21,6 +21,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 let g:coc_disable_startup_warning = 1
 
+" download plugged if not available
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -38,8 +39,6 @@ Plug 'vim-airline/vim-airline'
 if v:version > 709
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-endif
-if filereadable(expand('node'))
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
