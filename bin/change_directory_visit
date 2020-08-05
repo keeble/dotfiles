@@ -1,0 +1,59 @@
+#! /bin/sh
+
+if [ -z "$1" ]
+  then
+    if [ -z "$VISIT" ]
+      then
+        echo "I'll assume you want the cm visit"
+        cmxxxxx="cm26453"
+        DIRECTORY1="/dls/i15-1/data/2020/$cmxxxxx-1/"
+        DIRECTORY2="/dls/i15-1/data/2020/$cmxxxxx-2/"
+        DIRECTORY3="/dls/i15-1/data/2020/$cmxxxxx-3/"
+        DIRECTORY4="/dls/i15-1/data/2020/$cmxxxxx-4/"
+        DIRECTORY5="/dls/i15-1/data/2020/$cmxxxxx-5/"
+        DIRECTORY6="/dls/i15-1/data/2020/$cmxxxxx-6/"
+        if [ -d "$DIRECTORY6" ]; then
+          cd $DIRECTORY6
+        elif [ -d "$DIRECTORY5" ]; then
+          cd $DIRECTORY5
+        elif [ -d "$DIRECTORY4" ]; then
+          cd $DIRECTORY4
+        elif [ -d "$DIRECTORY3" ]; then
+          cd $DIRECTORY3
+        elif [ -d "$DIRECTORY2" ]; then
+          cd $DIRECTORY2
+        elif [ -d "$DIRECTORY1" ]; then
+          cd $DIRECTORY1
+        else 
+          echo "but I don't know what it is"
+       fi
+      else
+        cd "$VISIT"
+    fi
+  else
+    DIRECTORY20="/dls/i15-1/data/2020/$1/"
+    DIRECTORY19="/dls/i15-1/data/2019/$1/"
+    DIRECTORY18="/dls/i15-1/data/2018/$1/"
+    DIRECTORY17="/dls/i15-1/data/2017/$1/"
+    DIRECTORY16="/dls/i15-1/data/2016/$1/"
+    DIRECTORY15="/dls/i15-1/data/2015/$1/"
+    if [ -d "$DIRECTORY20" ]; then
+      cd $DIRECTORY20
+    elif [ -d "$DIRECTORY19" ]; then
+      cd $DIRECTORY19
+    elif [ -d "$DIRECTORY18" ]; then
+      cd $DIRECTORY18
+    elif [ -d "$DIRECTORY17" ]; then
+      cd $DIRECTORY17
+    elif [ -d "$DIRECTORY16" ]; then
+      cd $DIRECTORY16
+    elif [ -d "$DIRECTORY15" ]; then
+      cd $DIRECTORY15
+    else
+      echo "I can't seem to find that visit"
+    fi
+fi
+pwd
+
+
+

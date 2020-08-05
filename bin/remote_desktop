@@ -1,0 +1,53 @@
+#! /bin/sh
+majversion=$(lsb_release -rs | cut -f1 -d.)
+
+if [ "$1" == "-h" ]; then
+    echo "$0 <ip_or_hostname> [right|left]"
+    exit
+elif [ "$2" == "" ]; then
+    IP=diamrd3519
+else
+    IP=$1
+fi
+
+
+if [ $majversion == 6 ]; then
+    rdesktop -u "clrc\fer45166" -k en-gb -g 1860x1150 -b -K -N -a 24 $IP &
+else
+
+if [ "$1" == "small" ]; then
+    WIDTH=1650
+    HEIGHT=925
+    X=0
+    Y=40
+elif [ "$1" == "big" ]; then
+    WIDTH=2400
+    HEIGHT=1400
+    X=0
+    Y=40
+else
+    WIDTH=1920
+    HEIGHT=1100
+    X=1920
+    Y=40
+fi
+ 
+# Set domain, username, geometry, clipboard redirection, window name,
+# no window decorations, 32bpp colour, enable gui username prompt, smooth fonts
+#xfreerdp -d CLRC -u fer45166  -g ${WIDTH}x${HEIGHT} --plugin cliprdr -T $IP \
+#       -a 32 --no-nla --fonts --ignore-certificate  $IP &
+
+#xfreerdp /d:CLRC /u:fer45166  -/size:${WIDTH}x${HEIGHT}  $IP
+
+xfreerdp /d:CLRC /u:fer45166 /w:${WIDTH} /h:${HEIGHT} /v:$IP
+
+
+
+
+while [[ "$(wmctrl -l | grep $IP)" == "" ]]; do
+    sleep 0.5
+done
+wmctrl -F -r $IP -e "0,$X,$Y,$WIDTH,$HEIGHT"
+#wmctrl -F -r $IP -b 'add,sticky'
+
+fi

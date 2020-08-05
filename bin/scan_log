@@ -1,0 +1,47 @@
+#! /bin/sh
+
+if [ -z "$1" ]
+  then
+    echo "I'll assume you want the cm visit"
+    number=10
+    cmxxxxx="cm26453"
+    DIRECTORY1="/dls/i15-1/data/2020/$cmxxxxx-1/"
+    DIRECTORY2="/dls/i15-1/data/2020/$cmxxxxx-2/"
+    DIRECTORY3="/dls/i15-1/data/2020/$cmxxxxx-3/"
+    DIRECTORY4="/dls/i15-1/data/2020/$cmxxxxx-4/"
+    DIRECTORY5="/dls/i15-1/data/2020/$cmxxxxx-5/"
+    DIRECTORY6="/dls/i15-1/data/2020/$cmxxxxx-6/"
+    if [ -d "$DIRECTORY6" ]; then
+      echo "/dls/i15-1/data/2020/$cmxxxxx-6/scan.log"
+      tail -n $number "/dls/i15-1/data/2020/$cmxxxxx-6/scan.log"
+    elif [ -d "$DIRECTORY5" ]; then
+      echo "/dls/i15-1/data/2020/$cmxxxxx-5/scan.log"
+      tail -n $number "/dls/i15-1/data/2020/$cmxxxxx-5/scan.log"
+    elif [ -d "$DIRECTORY4" ]; then
+      echo "/dls/i15-1/data/2020/$cmxxxxx-4/scan.log"
+      tail -n $number "/dls/i15-1/data/2020/$cmxxxxx-4/scan.log"
+    elif [ -d "$DIRECTORY3" ]; then
+      echo "/dls/i15-1/data/2020/$cmxxxxx-3/scan.log"
+      tail -n $number "/dls/i15-1/data/2020/$cmxxxxx-3/scan.log"
+    elif [ -d "$DIRECTORY2" ]; then
+      echo "/dls/i15-1/data/2020/$cmxxxxx-2/scan.log"
+      tail -n $number "/dls/i15-1/data/2020/$cmxxxxx-2/scan.log"
+    elif [ -d "$DIRECTORY1" ]; then
+      echo "/dls/i15-1/data/2020/$cmxxxxx-1/scan.log"
+      tail -n $number "/dls/i15-1/data/2020/$cmxxxxx-1/scan.log"
+    else 
+      echo "but I don't know what it is..."
+    fi
+  else
+    if [ -z "$2" ]
+      then
+        number=5
+      else
+        number=$2
+    fi
+    echo '/dls/i15-1/data/2020/'$1'/scan.log'
+    tail -n $number '/dls/i15-1/data/2020/'$1'/scan.log'
+fi
+
+
+

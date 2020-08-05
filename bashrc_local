@@ -1,0 +1,16 @@
+alias nb='gio open .'
+alias td='tail -f /tmp/fer45166-log.txt'
+alias tc='ls -t -d ./tmp/*pe1AD*/*.o* | head -1 | xargs less'
+
+alias bs='~/dotfiles/bin/beamline_status'
+alias rd='~/dotfiles/bin/remote_desktop'
+alias sl='~/dotfiles/bin/scan_log'
+alias cv='~/dotfiles/bin/change_directory_visit'
+alias eh3close='~/dotfiles/bin/eh3close'
+alias gdalog='~/dotfiles/bin/gdalog'
+
+alias tm='~/dotfiles/bin/tmux_menu'
+alias zd='~/dotfiles/bin/zocdev'
+
+alias go='source ~/dotfiles/bin/load_all_the_modules'
+alias qda='source ~/dotfiles/bin/qdelall'

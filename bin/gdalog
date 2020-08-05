@@ -1,0 +1,25 @@
+#! /bin/sh
+cmxxxxx="cm26453"
+DIRECTORY1="/dls/i15-1/data/2020/$cmxxxxx-1/"
+DIRECTORY2="/dls/i15-1/data/2020/$cmxxxxx-2/"
+DIRECTORY3="/dls/i15-1/data/2020/$cmxxxxx-3/"
+DIRECTORY4="/dls/i15-1/data/2020/$cmxxxxx-4/"
+DIRECTORY5="/dls/i15-1/data/2020/$cmxxxxx-5/"
+DIRECTORY6="/dls/i15-1/data/2020/$cmxxxxx-6/"
+if [ -d "$DIRECTORY6" ]; then
+  tail -f "${DIRECTORY6}gdaterminal.log"
+elif [ -d "$DIRECTORY5" ]; then
+  tail -f "${DIRECTORY5}gdaterminal.log"
+elif [ -d "$DIRECTORY4" ]; then
+  tail -f "${DIRECTORY4}gdaterminal.log"
+elif [ -d "$DIRECTORY3" ]; then
+  tail -f "${DIRECTORY3}gdaterminal.log"
+elif [ -d "$DIRECTORY2" ]; then
+  tail -f "${DIRECTORY2}gdaterminal.log"
+elif [ -d "$DIRECTORY1" ]; then
+  tail -f "${DIRECTORY1}gdaterminal.log"
+else
+  echo "no gda logs found this year"
+fi
+
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+module load dawn/nightly
+/dls/science/groups/scisoft/DawnDiamond/master/builds/snapshot-linux64/dawn -data /home/fer45166/DAWN_nightly   --launcher.appendVmargs -vmargs -Xmx12288m -Dorg.eclipse.swt.browser.XULRunnerPath=/dls_sw/apps/xulrunner/64/xulrunner-1.9.2 -Duk.ac.diamond.scisoft.feedback.recipient=scisoftjira@diamond.ac.uk -Dorg.dawnsci.usagedata.gathering.enabled=true -Dorg.dawnsci.usagedata.recording.ask=false -Dorg.eclipse.dawnsci.enable.event.tracking=true -Dosgi.configuration.area=/tmp/fer45166/.dawn_osgi -Dgraylog.host=graylog.diamond.ac.uk -Ddawn.version=2.5.0.v20170508-1007  > /tmp/fer45166-log.txt 2>&1
