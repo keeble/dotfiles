@@ -6,4 +6,4 @@ As a bonues there are also various bashrc_local aliases for work.
 1. cd ~
 2. git clone https://github.com/keeble/dotfiles.git
 3. ./dotfiles/install.sh
-4. (optional) ln -s /home/<user>/dotfiles/bashrc_local ~/.bashrc_local
+4. (optional) ln -s /home/username/dotfiles/bashrc_local ~/.bashrc_local
