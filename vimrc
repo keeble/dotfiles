@@ -78,6 +78,7 @@ nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart
 nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>cp :CocCommand python.setInterpreter<CR>
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -125,6 +126,7 @@ nmap <leader>p :r! cat /tmp/vitmp<CR>
 
 " allow unsaved buffers to be abandoned
 set hidden
+set confirm
 
 " make backspace work as it does in the rest of the world
 set backspace=indent,eol,start
