@@ -133,9 +133,24 @@ set confirm
 " make backspace work as it does in the rest of the world
 set backspace=indent,eol,start
 
-" easier navigation of buffers
-nnoremap <leader>] :bn<CR>
-nnoremap <leader>[ :bp<CR>
+function! BnSkipTerm()
+  let start_buffer = bufnr('%')
+  bn
+  while &buftype ==# 'terminal' && bufnr('%') != start_buffer
+    bn
+  endwhile
+endfunction
+
+function! BpSkipTerm()
+  let start_buffer = bufnr('%')
+  bp
+  while &buftype ==# 'terminal' && bufnr('%') != start_buffer
+    bp
+  endwhile
+endfunction
+
+nnoremap <leader>] :call BnSkipTerm()<CR>
+nnoremap <leader>[ :call BpSkipTerm()<CR>
 
 "colour scheme
 colorscheme gruvbox
