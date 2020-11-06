@@ -112,6 +112,7 @@ nnoremap <Leader>rp :resize 100<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 noremap <leader>\t :below terminal<CR>
+nnoremap <Leader>b :ls<CR>:b<Space>
 
 " increase sizes of <C-e> and <C-y> scrolling
 noremap <C-e> 7<C-e>
