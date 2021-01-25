@@ -19,6 +19,8 @@ set incsearch
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+set scrolloff=8
+
 let g:coc_disable_startup_warning = 1
 
 " download plugged if not available
