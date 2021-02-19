@@ -1,11 +1,12 @@
 #! /bin/sh
-cmxxxxx="cm26453"
-DIRECTORY1="/dls/i15-1/data/2020/$cmxxxxx-1/"
-DIRECTORY2="/dls/i15-1/data/2020/$cmxxxxx-2/"
-DIRECTORY3="/dls/i15-1/data/2020/$cmxxxxx-3/"
-DIRECTORY4="/dls/i15-1/data/2020/$cmxxxxx-4/"
-DIRECTORY5="/dls/i15-1/data/2020/$cmxxxxx-5/"
-DIRECTORY6="/dls/i15-1/data/2020/$cmxxxxx-6/"
+cmxxxxx="cm28126"
+year=2021
+DIRECTORY1="/dls/i15-1/data/$year/$cmxxxxx-1/"
+DIRECTORY2="/dls/i15-1/data/$year/$cmxxxxx-2/"
+DIRECTORY3="/dls/i15-1/data/$year/$cmxxxxx-3/"
+DIRECTORY4="/dls/i15-1/data/$year/$cmxxxxx-4/"
+DIRECTORY5="/dls/i15-1/data/$year/$cmxxxxx-5/"
+DIRECTORY6="/dls/i15-1/data/$year/$cmxxxxx-6/"
 if [ -d "$DIRECTORY6" ]; then
   tail -f "${DIRECTORY6}gdaterminal.log"
 elif [ -d "$DIRECTORY5" ]; then
